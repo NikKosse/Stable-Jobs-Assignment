@@ -1,0 +1,47 @@
+data structures used:
+
+applicant{
+	char* name,
+	char** prefrences,
+	int hasJob,
+	char* job_title
+};
+
+job{
+	char* name,
+	char** prefrences,
+	int openings,
+	int full
+};
+
+read file and fill out data structures //kayla is doing/has done this 
+
+stableJobs
+	for all Applicant
+		applicant.hasJob = 0 //set all applicants to unemployed
+	for all Jobs
+		jobs.full = 0 //set all jobs to avaliable
+	while (job availabe)
+		for each Applicant
+			Apply //apply to top available choice
+	JobCheck //check all current pairs and make sure they are stable
+
+
+Apply
+	if applicant.hasJob != true
+		applicant.hasJob = 1 //employed
+		add to array keeping track of pairs
+	else
+		if rank applicant.newJob > applicant.currJob //higher is better
+			quit oldJob
+			apply to newJob
+
+JobCheck
+	for each Applicant
+		compare each pair in the pair array
+		
+		if swap would result in better pair
+			swap pairs
+
+quit
+	applicant.hasJob = 0 //unemployed	

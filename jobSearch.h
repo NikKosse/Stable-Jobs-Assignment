@@ -20,6 +20,3 @@ struct People {
     int hasJob;
     char job_title[100];
 };
-
-
-int stable();

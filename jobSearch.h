@@ -2,6 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 
+void stable();
+int read(int, char**);
+
 struct Job {
     char jobName[100];
     char pref[10][10];

@@ -1,8 +1,8 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include "struct.h"
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
+#include "jobSearch.h"
 
-int stable() {
+void stable() {
 	printf("we are connected!\n");
 }

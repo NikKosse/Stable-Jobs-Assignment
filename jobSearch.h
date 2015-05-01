@@ -21,4 +21,3 @@ struct People {
     char job_title[100];
 };
 
-

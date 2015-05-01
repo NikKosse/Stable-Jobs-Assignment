@@ -3,6 +3,6 @@
 //#include <stdlib.h>
 #include "jobSearch.h"
 
-void stable() {
+void stable(Job job, People person) { 
 	printf("we are connected!\n");
 }

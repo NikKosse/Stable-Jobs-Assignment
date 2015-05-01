@@ -1,7 +1,8 @@
 #include "jobSearch.h"
 
-int read(int argc, char**argv)
+int read(int argc, char**argv, Job* jobTest, People* peopleTest)
 {	
+
 	if (argc > 2)
         {
                 printf("USAGE: %s <Number of Iterations> (s1) (s2).....\n\n", argv[0]);
@@ -32,8 +33,6 @@ int read(int argc, char**argv)
 	    
 	int prefIndex;
   
-	struct Job* jobTest =  malloc(sizeof(struct Job));
-	struct People* peopleTest =  malloc(sizeof(struct People));
  
 	while (1){
         	fscanf(in, "%s", temp1);

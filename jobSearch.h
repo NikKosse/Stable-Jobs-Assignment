@@ -2,22 +2,23 @@
 #include <string.h>
 #include <stdlib.h>
 
-void stable();
-int read(int, char**);
 
-struct Job {
+typedef struct {
     char jobName[100];
     char pref[10][10];
     int openings;
     int full;
-    int employees[10][10];
-};
+    char employees[10][10];
+} Job;
 
-struct People {
+typedef struct {
     char first[100];
     char last[100];
     char pref[10][10];
     int hasJob;
     char job_title[100];
-};
+} People;
+
+void stable(Job*, People*);
+int read(int, char**, Job*, People*);
 

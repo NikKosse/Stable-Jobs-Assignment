@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-
+#include "struct.h"
+/*
 struct Job {
     char jobName[100];
     char pref[10][10];
@@ -18,7 +18,7 @@ struct People {
     int hasJob;
     char job_title[100];
 };
-
+*/
 
 int main(int argc, char**argv)
 {	

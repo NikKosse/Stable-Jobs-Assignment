@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include "struct.h"
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
+//#include "struct.h"
 /*
 struct Job {
     char jobName[100];
@@ -20,7 +20,7 @@ struct People {
 };
 */
 
-int main(int argc, char**argv)
+int read(int argc, char**argv)
 {	
 	if (argc > 2)
         {

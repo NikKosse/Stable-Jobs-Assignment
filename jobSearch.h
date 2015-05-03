@@ -8,8 +8,9 @@ typedef struct {
     char pref[10][10];
     int openings;
     int full;
-    char employees[10][10];
-} Job;
+    char employeeFirst[10];
+    char employeeLast[10];
+} Job
 
 typedef struct {
     char first[100];

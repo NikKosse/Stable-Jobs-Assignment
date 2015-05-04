@@ -40,8 +40,13 @@ void apply(Job job, People person){
 
 int rank(Job job, People person){
 	printf("you called rank!\n");
-
-	return 0;
+	int i;
+	char* fullName=(char*) malloc(sizeof(char)*40);
+	strcpy(fullName,person.first);
+	strcat(fullName," ");
+	strcat(fullName,person.last);
+	for(i=0; i<=job.openings && (strcmp(job.pref[i],fullName));i++); 
+	return i;
 }
 
 void tempHire() {

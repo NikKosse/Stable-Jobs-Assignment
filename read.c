@@ -71,7 +71,7 @@ int read(int argc, char**argv, Job* jobTest, People* peopleTest)
     
 	for (m=0; m<jobSize; m++){
         	fscanf(in, "%s", temp1);
-        
+			
         	for (l=0; l<jobSize; l++)
         	{
                 	if(strcmp(temp1, jobTest[l].jobName) == 0){
@@ -80,13 +80,14 @@ int read(int argc, char**argv, Job* jobTest, People* peopleTest)
                		 }          
        		 }
        		 n=0;
-  
+			jobTest[prefIndex].pref=(char**) malloc(sizeof(char*)*100);
        		 while(1)
         	 {
                  	fscanf(in, "%s", temp1);
             
                  	if(strcmp(temp1, "Preferences") == 0)
                     		break;
+					jobTest[prefIndex].pref[n]=(char*) malloc(sizeof(char*)*40);
                  	strcpy(jobTest[prefIndex].pref[n], temp1);
                 	fscanf(in, "%s", temp1);
 
@@ -150,4 +151,6 @@ int read(int argc, char**argv, Job* jobTest, People* peopleTest)
 		        printf("%d. %s\n", q+1, peopleTest[p].pref[q]);   
         	}
 	}
+	
+	return jobSize;
 }

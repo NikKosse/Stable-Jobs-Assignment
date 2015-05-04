@@ -5,7 +5,7 @@
 
 typedef struct {
     char jobName[100];
-    char pref[10][10];
+    char* pref[30];
     int openings;//to check if there are any openings check this value
     char employeeFirst[10];
     char employeeLast[10];

@@ -6,3 +6,8 @@
 void stable() {
 	printf("we are connected!\n");
 }
+
+void tempHire() {
+
+
+}

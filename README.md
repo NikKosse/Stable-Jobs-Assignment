@@ -1,1 +1,1 @@
-$ Stable-Jobs-Assignment
+This is the README for our 3050 final project.  To run the program enter "make", and then enter "./jobMatch input.txt".  This will run the program with input.txt as the file it will read in.  Once that is done and you are done using the program, run "make clean" to remove all the extra files as well as the executable file.

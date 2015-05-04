@@ -80,7 +80,6 @@ int read(int argc, char**argv, Job* jobTest, People* peopleTest)
                		 }          
        		 }
        		 n=0;
-			jobTest[prefIndex].pref=(char**) malloc(sizeof(char*)*100);
        		 while(1)
         	 {
                  	fscanf(in, "%s", temp1);

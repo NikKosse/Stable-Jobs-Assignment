@@ -4,6 +4,7 @@ void stable(Job* job, People* person) {
 	//logic will go here
 }
 
+//function to hire the person
 void hire(Job job, People person){
 
 	if(job.openings > 0)
@@ -17,27 +18,33 @@ void hire(Job job, People person){
 
 }
 
-void apply(Job job, People person){
+//function to have a person apply to a job and they are either accepted or rejected
+void apply(Job job, People person, Job currJob, People currPerson){
 
-//	Person* currEmployee = *person;
+/*	Job* currJob = malloc(sizeof(Job));
+	currJob = job[current];//will this work?
+
+	Person* currPerson = malloc(sizeof(Person));
+	currPerson = person[current];//will this work?*/
 
 	if(job.openings != 0)//if there is a position available accept applicant
 	{
 		hire(job, person);
 	}
 	//this is where I"m stuck, handling the fireing of the current employee and hiring the new one.  keeping track of which is which is throwing me off, I'm sure the solution is simple I'm just not seeing it. good luck!
-	else if (rank(job, person) < rank(job, person))//if there are no positions compare people and choose the one that's higher ranked. NOTE: rank not written yet
+	else if (rank(currJob, currPerson) < rank(job, person))
 	{
-		strcpy(job.employeeFirst, "");
-		strcpy(job.employeeLast, "");	
-		strcpy(person.job_title, "");		
-		job.openings++;
+		strcpy(currJob.employeeFirst, "");
+		strcpy(currJob.employeeLast, "");	
+		strcpy(currPerson.job_title, "");		
+		currJob.openings++;
 		
-		
+		hire(job, person);
 	}
 		
 }
 
+//function to return the employer's rank of a given person
 int rank(Job job, People person){
 	printf("you called rank!\n");
 	int i;

@@ -87,7 +87,7 @@ int covet(int man1, int wife2)
 	return 0;
 }
 
-//function to take in and pass a man and a wife
+//function to take in two men and pass them to covet
 int thy_neighbors_wife(int man1, int man2)
 {	/* +: force checking all pairs; "||" would shortcircuit */
 	return covet(man1, pairs[man2]) + covet(man2, pairs[man1]);

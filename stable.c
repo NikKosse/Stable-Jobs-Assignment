@@ -1,7 +1,37 @@
 #include "jobSearch.h"
 
-void stable(Job* job, People* person) { 
-	//logic will go here
+void stable(Job* job, People* person, int jobSize, int peopleSize) { 
+	//initalize everything
+	int i =0;
+	int numJobs = 0;
+	for(i=0;i<jobSize;i++){
+		strcpy(job[i]employeeFirst, "");
+		strcpy(job[i]employeeLast, "");
+	}
+
+	for(i=0;i<peopleSize;i++){
+		strcpy(person[i].job_title, "");
+	}
+	
+	//begin matching
+	numJobs = calcNumJobs(job, jobSize);
+	i = 0;
+	while(numJobs != 0)
+		
+		//do stuff here
+		numJobs = calcNumJobs(job, jobSize);//must be at the end of the loop
+}
+
+//function to get the total number of jobs left.  used to decide if the algorithm needs to keep going or not
+int calcNumJobs(Job* jobs, int jobSize){
+	int numJobs = 0;
+	int i = 0;
+
+	for(i=0;i<jobSize;i++){
+		numJobs += jobs[i].openings;
+	}
+
+	return numJobs;
 }
 
 //function to hire the person
@@ -21,17 +51,10 @@ void hire(Job job, People person){
 //function to have a person apply to a job and they are either accepted or rejected
 void apply(Job job, People person, Job currJob, People currPerson){
 
-/*	Job* currJob = malloc(sizeof(Job));
-	currJob = job[current];//will this work?
-
-	Person* currPerson = malloc(sizeof(Person));
-	currPerson = person[current];//will this work?*/
-
 	if(job.openings != 0)//if there is a position available accept applicant
 	{
 		hire(job, person);
 	}
-	//this is where I"m stuck, handling the fireing of the current employee and hiring the new one.  keeping track of which is which is throwing me off, I'm sure the solution is simple I'm just not seeing it. good luck!
 	else if (rank(currJob, currPerson) < rank(job, person))
 	{
 		strcpy(currJob.employeeFirst, "");
@@ -56,7 +79,4 @@ int rank(Job job, People person){
 	return i;
 }
 
-void tempHire() {
 
-
-}

@@ -26,6 +26,7 @@ int read(int argc, char**argv, Job* jobTest, People* peopleTest)
 	int i;
 	int jobSize =0;
 	int peopleSize =0;
+	int sizes[2];
 	int l;
 	int m;
 	int temp;
@@ -68,7 +69,12 @@ int read(int argc, char**argv, Job* jobTest, People* peopleTest)
        
         	peopleSize++;
 	}
-    
+    	
+	if(peopleSize < jobSize){
+		printf("Error!  Too few applicants.\n");
+		break;
+	}
+	
 	for (m=0; m<jobSize; m++){
         	fscanf(in, "%s", temp1);
 			
@@ -151,5 +157,8 @@ int read(int argc, char**argv, Job* jobTest, People* peopleTest)
         	}
 	}
 	
-	return jobSize;
+	sizes[0] = jobSize;
+	sizes[1] = peopleSize;
+	
+	return sizes;
 }

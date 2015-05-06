@@ -7,7 +7,8 @@ typedef struct {
 	char jobName[100];
 	char* pref[30];
 	int openings;//to check if there are any openings check this value
-	char* employees[30];
+	char employeeFirst[10];
+	char employeeLast[10];
 } Job;
 
 typedef struct {
@@ -19,4 +20,6 @@ typedef struct {
 
 void stable(Job*, People*, int, int);
 int *read(int, char**, Job*, People*);
-
+int calcNumJobs(Job* jobs, int jobSize);
+int hire(Job job, People person);
+int apply(Job job, People person);

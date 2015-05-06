@@ -75,7 +75,7 @@ int *read(int argc, char**argv, Job* jobTest, People* peopleTest)
 		printf("Error!  Too few applicants.\n");
 		return;
 	}
-	
+
 	for (m=0; m<jobSize; m++){
         	fscanf(in, "%s", temp1);
 			
@@ -93,7 +93,7 @@ int *read(int argc, char**argv, Job* jobTest, People* peopleTest)
             
                  	if(strcmp(temp1, "Preferences") == 0)
                     		break;
-					jobTest[prefIndex].pref[n]=(char*) malloc(sizeof(char*)*40);
+					jobTest[prefIndex].pref[n]=(char*) malloc(sizeof(char)*40);
                  	strcpy(jobTest[prefIndex].pref[n], temp1);
                 	fscanf(in, "%s", temp1);
 
@@ -126,7 +126,7 @@ int *read(int argc, char**argv, Job* jobTest, People* peopleTest)
 	                if(strcmp(temp1, "END") == 0)
 	                	break;
 
-	             	//peopleTest[prefIndex].pref[n] = (char*) malloc(100 * sizeof(char));
+	             	peopleTest[prefIndex].pref[n] = (char*) malloc(40 * sizeof(char));
 	              	strcpy(peopleTest[prefIndex].pref[n], temp1);
             
 	           	n++;
@@ -139,7 +139,7 @@ int *read(int argc, char**argv, Job* jobTest, People* peopleTest)
 	for (p=0; p<jobSize; p++)
 	{
         	printf("\n\nName: %s\n", jobTest[p].jobName);
-	        printf("Vaccacies: %d\n", jobTest[p].openings);
+	        printf("Vacancies: %d\n", jobTest[p].openings);
 	        printf("Pref Order:\n");
        
         	for (q=0; q<peopleSize; q++)
@@ -157,9 +157,7 @@ int *read(int argc, char**argv, Job* jobTest, People* peopleTest)
 		        printf("%d. %s\n", q+1, peopleTest[p].pref[q]);   
         	}
 	}
-	
-	sizes[0] = jobSize;
-	sizes[1] = peopleSize;
-	
+	sizes[0]=jobSize;
+	sizes[1]=peopleSize;
 	return sizes;
 }

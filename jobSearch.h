@@ -19,5 +19,5 @@ typedef struct {
 } People;
 
 void stable(Job*, People*, int, int);
-int read(int, char**, Job*, People*);
+int *read(int, char**, Job*, People*);
 

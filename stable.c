@@ -4,31 +4,38 @@ void stable(Job* job, People* person, int jobSize, int peopleSize) {
 	//initalize everything
 	int i =0;
 	int numJobs = 0;
+	printf("jobSize is: %d\n", jobSize);
+	printf("peopleSize is: %d\n", peopleSize);
 	for(i=0;i<jobSize;i++){
-		strcpy(job[i]employeeFirst, "");
-		strcpy(job[i]employeeLast, "");
+		strcpy(job[i].employeeFirst, "");
+		strcpy(job[i].employeeLast, "");
+		printf("setting to null\n");
 	}
 
 	for(i=0;i<peopleSize;i++){
 		strcpy(person[i].job_title, "");
+		printf("stting to null\n");
 	}
 	
 	//begin matching
 	numJobs = calcNumJobs(job, jobSize);
 	i = 0;
 	while(numJobs != 0)
-		
-		//do stuff here
+	//	apply(job[i], person[i]);
+	//	printf("Applying i\n");
+	//	i++;
 		numJobs = calcNumJobs(job, jobSize);//must be at the end of the loop
+		printf("number of jobs left: %d \n");
 }
 
 //function to get the total number of jobs left.  used to decide if the algorithm needs to keep going or not
 int calcNumJobs(Job* jobs, int jobSize){
 	int numJobs = 0;
 	int i = 0;
-
+	printf("calculating number of jobs left\n");
 	for(i=0;i<jobSize;i++){
 		numJobs += jobs[i].openings;
+		printf("counting\n");
 	}
 
 	return numJobs;

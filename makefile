@@ -1,11 +1,11 @@
 all:driver.c jobSearch.h stable.o read.o
-	gcc -Wall driver.c stable.o read.o -o jobMatch
+	gcc -g -Wall  driver.c stable.o read.o -o jobMatch
 
 stable.o: stable.c
-	gcc -c stable.c
+	gcc -g -c stable.c
 
 read.o: read.c
-	gcc -c read.c
+	gcc -g -c read.c
 	
 clean:
 	rm -rf *.o jobMatch

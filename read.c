@@ -1,6 +1,6 @@
 #include "jobSearch.h"
 
-int read(int argc, char**argv, Job* jobTest, People* peopleTest)
+int *read(int argc, char**argv, Job* jobTest, People* peopleTest)
 {	
 
 	if (argc > 2)
@@ -26,7 +26,8 @@ int read(int argc, char**argv, Job* jobTest, People* peopleTest)
 	int i;
 	int jobSize =0;
 	int peopleSize =0;
-	int sizes[2];
+	int *sizes;
+	sizes = malloc(2 * sizeof(int));
 	int l;
 	int m;
 	int temp;
@@ -72,7 +73,7 @@ int read(int argc, char**argv, Job* jobTest, People* peopleTest)
     	
 	if(peopleSize < jobSize){
 		printf("Error!  Too few applicants.\n");
-		break;
+		return;
 	}
 	
 	for (m=0; m<jobSize; m++){

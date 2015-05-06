@@ -1,39 +1,43 @@
 #include "jobSearch.h"
 
-void stable(Job* job, People* person, int jobSize, int peopleSize) { 
+void stable(Job* job, People* person, int numJob, int numPeople) { 
 	//initalize everything
-	int i =0;
+	int i = 0;
+	int j = 0;
 	int numJobs = 0;
-	printf("jobSize is: %d\n", jobSize);
-	printf("peopleSize is: %d\n", peopleSize);
-	for(i=0;i<jobSize;i++){
+	printf("numJob is: %d\n", numJob);
+	printf("numPeople is: %d\n", numPeople);
+	for(i=0;i<numJob;i++){
 		strcpy(job[i].employeeFirst, "");
 		strcpy(job[i].employeeLast, "");
 		printf("setting to null\n");
 	}
 
-	for(i=0;i<peopleSize;i++){
+	for(i=0;i<numPeople;i++){
 		strcpy(person[i].job_title, "");
 		printf("stting to null\n");
 	}
 	
 	//begin matching
-	numJobs = calcNumJobs(job, jobSize);
+	numJobs = calcNumJobs(job, numJob);
 	i = 0;
 	while(numJobs != 0)
-	//	apply(job[i], person[i]);
-	//	printf("Applying i\n");
-	//	i++;
-		numJobs = calcNumJobs(job, jobSize);//must be at the end of the loop
+		
+		if(i>numJob) i=0;
+		if(j>numPeople) j=0;
+		apply(job[i], person[j]);
+		printf("Applying i\n");
+		
+		numJobs = calcNumJobs(job, numJob);//must be at the end of the loop
 		printf("number of jobs left: %d \n");
 }
 
 //function to get the total number of jobs left.  used to decide if the algorithm needs to keep going or not
-int calcNumJobs(Job* jobs, int jobSize){
+int calcNumJobs(Job* jobs, int numJob){
 	int numJobs = 0;
 	int i = 0;
 	printf("calculating number of jobs left\n");
-	for(i=0;i<jobSize;i++){
+	for(i=0;i<numJob;i++){
 		numJobs += jobs[i].openings;
 		printf("counting\n");
 	}
@@ -56,18 +60,18 @@ void hire(Job job, People person){
 }
 
 //function to have a person apply to a job and they are either accepted or rejected
-void apply(Job job, People person, Job currJob, People currPerson){
+void apply(Job job, People person){
 
 	if(job.openings != 0)//if there is a position available accept applicant
 	{
 		hire(job, person);
 	}
-	else if (rank(currJob, currPerson) < rank(job, person))
+	else if (rank(job, person) < rank(job, person))
 	{
-		strcpy(currJob.employeeFirst, "");
-		strcpy(currJob.employeeLast, "");	
-		strcpy(currPerson.job_title, "");		
-		currJob.openings++;
+	//	strcpy(currJob.employeeFirst, "");
+	//	strcpy(currJob.employeeLast, "");	
+	//	strcpy(currPerson.job_title, "");		
+	//	currJob.openings++;
 		
 		hire(job, person);
 	}

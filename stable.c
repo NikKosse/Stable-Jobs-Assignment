@@ -96,18 +96,25 @@ int rank(Job job, People person){
 	return i;
 }
 
-/*int wantOtherJobEmployee(Job job, People person){
+int wantOtherJobEmployee(Job job, People person){
+//	would handle the case where one job felt another job's employee was better for them
+	
+	
+}
 
-	would handle the case where one job felt another job's employee was better for them
+void otherEmployee(Job job, People person){
+//	clears the info on the passed in in job and employee and hires them
+	strcpy(job.employeeFirst, "");
+	strcpy(job.employeeLast, "")
+	job.openings++;
+	strcpy(person.job_title, "");
 
-}*/
+	hire(job, person);
+	
+}
 
-/*void otherEmployee(){
-	would match coveting job with said employee if they coveted one another.
-}*/
-
-/*void unstable() {
-
-	would check for odd employee/employer match.
-
-}*/
+void unstable() {
+//	would check for odd employee/employer match.
+	
+	
+}

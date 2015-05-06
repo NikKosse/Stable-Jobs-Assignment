@@ -14,7 +14,7 @@ typedef struct {
 typedef struct {
 	char first[100];
 	char last[100];
-	char pref[10][10];
+	char pref[30];
 	char job_title[100];//to check if they are employed check this value
 } People;
 
